@@ -10,4 +10,16 @@
 
 @implementation UIViewController (Advert)
 
+
+
+- (GDTRequestManager *)gdtRequestManager {
+    
+    _gdtRequestManager = objc_getAssociatedObject(self, _cmd);
+    if (!_gdtRequestManager) {NSLog(@"set");
+        _gdtRequestManager = [[GDTRequestManager alloc] initWithController:self];
+        objc_setAssociatedObject(self, _cmd, _gdtRequestManager, OBJC_ASSOCIATION_RETAIN);
+    }
+    return _gdtRequestManager;
+}
+
 @end

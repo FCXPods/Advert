@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "GDTRequestManager.h"
+
 @interface UIViewController (Advert)
+
+@property (nonatomic, strong) GDTRequestManager *gdtRequestManager;
 
 @end
