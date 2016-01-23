@@ -25,10 +25,9 @@ Pod::Spec.new do |s|
   s.source_files  = "FCXAdvert/"
   #s.exclude_files = "Classes/Exclude"
 
+  s.vendored_libraries = "FCXAdvert/libGDTMobSDK.a"
 
-  # s.framework  = "SomeFramework"
- # s.frameworks = "AdSupport", "CoreLocation", "QuarzCore", "SystemConfiguration", "CoreTelephony", "Security", "StoreKit"
-s.framework  = "AdSupport", "CoreLocation", "SystemConfiguration", "CoreTelephony", "Security", "StoreKit", "QuartzCore"
+  s.framework  = "AdSupport", "CoreLocation", "SystemConfiguration", "CoreTelephony", "Security", "StoreKit", "QuartzCore"
 
   # s.library   = "iconv"
    s.libraries = "z"
