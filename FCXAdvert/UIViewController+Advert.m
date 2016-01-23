@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+Advert.h"
+#import <objc/runtime.h>
 
 @implementation UIViewController (Advert)
 
