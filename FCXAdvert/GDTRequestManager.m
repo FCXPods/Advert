@@ -25,17 +25,19 @@
  */
 -(void)nativeAdSuccessToLoad:(NSArray *)nativeAdDataArray {
     [self.dataArray addObjectsFromArray:nativeAdDataArray];
-    NSLog(@"==%@", self.dataArray);
-    if (self.requestSuccessBlcok) {
-        self.requestSuccessBlcok(self.dataArray);
-    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.requestSuccessBlcok) {
+            self.requestSuccessBlcok(self.dataArray);
+        }
+    });
 }
 
 /**
  *  原生广告加载广告数据失败回调
  */
 -(void)nativeAdFailToLoad:(NSError *)error {
-    NSLog(@"error %@", error.description);
+
 }
 
 - (NSMutableArray *)dataArray {
