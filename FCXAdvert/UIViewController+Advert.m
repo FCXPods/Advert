@@ -11,16 +11,20 @@
 
 @implementation UIViewController (Advert)
 
+@dynamic gdtRequestManager;
 
 
 - (GDTRequestManager *)gdtRequestManager {
-    
-    _gdtRequestManager = objc_getAssociatedObject(self, _cmd);
-    if (!_gdtRequestManager) {NSLog(@"set");
-        _gdtRequestManager = [[GDTRequestManager alloc] initWithController:self];
-        objc_setAssociatedObject(self, _cmd, _gdtRequestManager, OBJC_ASSOCIATION_RETAIN);
+    GDTRequestManager *gdtRequestManager = objc_getAssociatedObject(self, _cmd);
+    if (!gdtRequestManager) {
+        gdtRequestManager = [[GDTRequestManager alloc] initWithController:self];
+        self.gdtRequestManager = gdtRequestManager;
     }
-    return _gdtRequestManager;
+    return gdtRequestManager;
+}
+
+- (void)setGdtRequestManager:(GDTRequestManager *)gdtRequestManager {
+    objc_setAssociatedObject(self, @selector(gdtRequestManager), gdtRequestManager, OBJC_ASSOCIATION_RETAIN);
 }
 
 @end
