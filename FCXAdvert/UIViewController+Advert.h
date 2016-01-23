@@ -9,9 +9,14 @@
 #import <UIKit/UIKit.h>
 
 #import "GDTRequestManager.h"
+@import GoogleMobileAds;
 
-@interface UIViewController (Advert)
+
+@interface UIViewController (Advert) <GADBannerViewDelegate>
 
 @property (nonatomic, strong) GDTRequestManager *gdtRequestManager;
+@property (nonatomic, strong) GADBannerView *mobbannerView;
+
+- (void)showAdmobBanner:(CGRect)frame;
 
 @end
