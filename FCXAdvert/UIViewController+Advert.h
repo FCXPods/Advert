@@ -17,6 +17,6 @@
 @property (nonatomic, strong) GDTRequestManager *gdtRequestManager;
 @property (nonatomic, strong) GADBannerView *mobbannerView;
 
-- (void)showAdmobBanner:(CGRect)frame;
+- (void)showAdmobBanner:(CGRect)frame adUnitID:(NSString *)adUnitID;
 
 @end

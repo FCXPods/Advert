@@ -32,10 +32,10 @@
 
 #pragma mark - Admob
 
-- (void)showAdmobBanner:(CGRect)frame {
+- (void)showAdmobBanner:(CGRect)frame adUnitID:(NSString *)adUnitID {
     self.mobbannerView.frame = frame;
     self.mobbannerView.delegate = self;
-    self.mobbannerView.adUnitID = @"ca-app-pub-8565939677895939/9093648401";
+    self.mobbannerView.adUnitID = adUnitID;
     self.mobbannerView.rootViewController = self;
     GADRequest *request = [GADRequest request];
 #ifdef DEBUG
