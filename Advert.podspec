@@ -22,12 +22,14 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/FCXPods/Advert.git", :tag => "0.0.1" }
    s.platform     = :ios, "6.0"
 
-  s.source_files  = "FCXAdvert/", "Baidu/"
+  s.source_files  = "FCXAdvert/"
+#, "Baidu/"
   #s.exclude_files = "Classes/Exclude"
-  s.resource     = 'Baidu/baidumobadsdk.bundle'
+ # s.resource     = 'Baidu/baidumobadsdk.bundle'
 
 
-  s.vendored_libraries = "FCXAdvert/libGDTMobSDK.a", "Baidu/libBaiduMobAdSdk64bit.a"
+  s.vendored_libraries = "FCXAdvert/libGDTMobSDK.a"
+#, "Baidu/libBaiduMobAdSdk64bit.a"
   s.vendored_frameworks = "FCXAdvert/GoogleMobileAds.framework"
 
   s.frameworks  = "AdSupport", "CoreLocation", "SystemConfiguration", "CoreTelephony", "Security", "StoreKit", "QuartzCore", "AudioToolbox", "AVFoundation", "CoreGraphics", "CoreMedia", "EventKit", "EventKitUI", "MessageUI", "CoreMotion", "MediaPlayer", "MessageUI", "CoreLocation", "Foundation", "WebKit"
