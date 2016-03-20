@@ -19,4 +19,8 @@
 
 - (void)showAdmobBanner:(CGRect)frame adUnitID:(NSString *)adUnitID;
 
+- (void)showAdmobBanner:(CGRect)frame
+               adUnitID:(NSString *)adUnitID
+              superView:(UIView *)superView;
+
 @end

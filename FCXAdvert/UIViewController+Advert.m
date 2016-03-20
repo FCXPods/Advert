@@ -33,6 +33,13 @@
 #pragma mark - Admob
 
 - (void)showAdmobBanner:(CGRect)frame adUnitID:(NSString *)adUnitID {
+    [self showAdmobBanner:frame adUnitID:adUnitID superView:self.view];
+}
+
+- (void)showAdmobBanner:(CGRect)frame
+               adUnitID:(NSString *)adUnitID
+              superView:(UIView *)superView {
+    
     self.mobbannerView.frame = frame;
     self.mobbannerView.delegate = self;
     self.mobbannerView.adUnitID = adUnitID;
@@ -47,8 +54,9 @@
 #endif
     
     [self.mobbannerView loadRequest:request];
-    [self.view addSubview:self.mobbannerView];
+    [superView addSubview:self.mobbannerView];
 }
+
 
 - (GADBannerView *)mobbannerView {
     GADBannerView *mobBannerView = objc_getAssociatedObject(self, _cmd);
